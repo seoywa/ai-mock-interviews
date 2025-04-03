@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image'
 import React from 'react'
 
-enum callStatus {
+enum CallStatus {
   INACTIVE = 'INACTIVE',
   CONNECTIVE = 'CONNECTING',
   ACTIVE = 'ACTIVE',
@@ -46,14 +46,14 @@ const Agent = ({userName} : AgentProps) => {
       )}
 
       <div className='w-full flex justify-center'>
-        {callStatus !== 'ACTIVE' ? (
+        {CallStatus !== 'ACTIVE' ? (
           <button className='relative btn-call'
           >
             <span className={cn('absolute animate-ping rounded-fulll opacity-75')}>
             </span>
 
             <span>
-              {callStatus === 'INACTIVE' || 'FINISHED' ? 'Call' : '. . .'}
+              {CallStatus === 'INACTIVE' || 'FINISHED' ? 'Call' : '. . .'}
             </span>
           </button>
         ) : (
